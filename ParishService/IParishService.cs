@@ -14,14 +14,14 @@ namespace Parish
     {
         [OperationContract]
         [WebGet(UriTemplate = "v1/parishes", RequestFormat = WebMessageFormat.Json)]
-        List<ParishDTO> GetParishes();
+        List<ParishModel> GetParishes();
 
         [OperationContract]
         [WebGet(UriTemplate = "v1/parishes/{id}", RequestFormat = WebMessageFormat.Json)]
-        ParishDTO GetParish(string id);
+        ParishModel GetParish(string id);
 
         [OperationContract]
         [WebInvoke(UriTemplate = "v1/parishes", Method = "POST", RequestFormat = WebMessageFormat.Json)]
-        void AddParish(ParishDTO parish);
+        void AddParish(ParishModel parish);
     }
 }

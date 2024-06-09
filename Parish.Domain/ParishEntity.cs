@@ -9,12 +9,12 @@ using System.ComponentModel.DataAnnotations;
 namespace Parish.Domain
 {
     [Table("Parish")]
-    internal class ParishEntity
+    public class ParishModel
     {
         [Key]
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
-        public string City { get; set; }
         public string Street { get; set; }
+        public string City { get; set; }
     }
 }

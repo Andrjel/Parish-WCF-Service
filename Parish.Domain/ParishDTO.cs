@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parish.Domain
 {
-    public class ParishDTO
+    internal class ParishDTO
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string City { get; set; }
-        public string Street { get; set; }
     }
 }
