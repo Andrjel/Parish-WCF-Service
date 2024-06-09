@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parish.Domain
 {
-    public class ParishModel
+    public class ParishDTO
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

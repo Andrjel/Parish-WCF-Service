@@ -10,27 +10,26 @@ namespace Parish.Infrastructure
 {
     public class ParishContext: DbContext
     {
-        public ParishContext() : base("ParishDB")
+        public ParishContext() : base("Server=localhost,1401;Database=ParishDB;User Id=sa;Password=Password!23;")
         {
-            Database.SetInitializer(new ParishDBInitializer());
         }
 
-        public DbSet<ParishModel> Parishes { get; set; }
+        public DbSet<ParishDTO> Parishes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
         }
 
-        public class ParishDBInitializer : DropCreateDatabaseAlways<ParishContext>
-        {
-            protected override void Seed(ParishContext context)
-            {
-                base.Seed(context);
-                context.Parishes.Add(new ParishModel { Id = Guid.NewGuid(), Name = "Parafia 1",Street = "Adres 1", City = "Miasto 1"});
-                context.Parishes.Add(new ParishModel { Id = Guid.NewGuid(), Name = "Parafia 2", Street = "Adres 2", City = "Miasto 2"});
-                context.SaveChanges();
-            }
-        }
+        //public class ParishDBInitializer : DropCreateDatabaseAlways<ParishContext>
+        //{
+        //    protected override void Seed(ParishContext context)
+        //    {
+        //        base.Seed(context);
+        //        context.Parishes.Add(new ParishModel { Id = Guid.NewGuid(), Name = "Parafia 1",Street = "Adres 1", City = "Miasto 1"});
+        //        context.Parishes.Add(new ParishModel { Id = Guid.NewGuid(), Name = "Parafia 2", Street = "Adres 2", City = "Miasto 2"});
+        //        context.SaveChanges();
+        //    }
+        //}
     }
 }

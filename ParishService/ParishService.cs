@@ -5,23 +5,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ParishService
+namespace Parish
 {
     public class ParishService : IParishService
     {
         ParishContext _context = new ParishContext();
-        public void AddParish(ParishModel parish)
+        public void AddParish(ParishDTO parish)
         {
             _context.Parishes.Add(parish);
             _context.SaveChanges();
         }
 
-        public ParishModel GetParish(string id)
+        public ParishDTO GetParish(string id)
         {
             return _context.Parishes.FirstOrDefault(x => x.Id.ToString() == id);
         }
 
-        public List<ParishModel> GetParishes()
+        public List<ParishDTO> GetParishes()
         {
             return _context.Parishes.ToList();
         }

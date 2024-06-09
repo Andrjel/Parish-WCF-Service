@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parish.Domain", "Parish.Dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parish.Infrastructure", "Parish.Infrastructure\Parish.Infrastructure.csproj", "{0410D6B6-FB34-4435-A03E-8544FBB351F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParishService", "ParishService\ParishService.csproj", "{2557A2A9-40E0-4F7C-901F-EE7BE7FA3D21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parish", "ParishService\Parish.csproj", "{2557A2A9-40E0-4F7C-901F-EE7BE7FA3D21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
