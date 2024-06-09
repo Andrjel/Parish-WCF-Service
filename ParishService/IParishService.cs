@@ -4,23 +4,24 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
+using Parish.Domain;
 using System.Text;
 
-namespace Parish
+namespace ParishService
 {
     [ServiceContract]
     public interface IParishService
     {
         [OperationContract]
         [WebGet(UriTemplate = "v1/parishes", RequestFormat = WebMessageFormat.Json)]
-        List<Parish> GetParishes();
+        List<ParishModel> GetParishes();
 
         [OperationContract]
         [WebGet(UriTemplate = "v1/parishes/{id}", RequestFormat = WebMessageFormat.Json)]
-        Parish GetParish(string id);
+        ParishModel GetParish(string id);
 
         [OperationContract]
         [WebInvoke(UriTemplate = "v1/parishes", Method = "POST", RequestFormat = WebMessageFormat.Json)]
-        void AddParish(Parish parish);
+        void AddParish(ParishModel parish);
     }
 }

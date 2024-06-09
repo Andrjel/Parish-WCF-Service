@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Ogólne informacje o zestawie są kontrolowane poprzez następujący 
 // zestaw atrybutów. Zmień wartości tych atrybutów, aby zmodyfikować informacje
 // skojarzone z zestawem.
-[assembly: AssemblyTitle("Parish")]
+[assembly: AssemblyTitle("ParishService")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Parish")]
+[assembly: AssemblyProduct("ParishService")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Następujący identyfikator GUID jest identyfikatorem biblioteki typów w przypadku udostępnienia tego projektu w modelu COM
-[assembly: Guid("bf3dcb0b-d16f-4a65-b6ce-427da34301e6")]
+[assembly: Guid("2557a2a9-40e0-4f7c-901f-ee7be7fa3d21")]
 
 // Informacje o wersji zestawu zawierają następujące cztery wartości:
 //
