@@ -41,6 +41,9 @@ namespace Parish.Tests
                 }
         };
 
+        /// <summary>
+        /// Initialize test context
+        /// </summary>
         [TestInitialize]
         public void Initialize()
         {
