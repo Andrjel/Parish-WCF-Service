@@ -6,6 +6,8 @@ using System.Net.Http;
 using Parish.Domain;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Parish.Infrastructure;
+using System.Linq;
 
 namespace Parish.Tests
 {
@@ -16,11 +18,13 @@ namespace Parish.Tests
     public class ParishIntegrationTests
     {
         private HttpClient _client;
+        private ParishContext _context;
 
         [TestInitialize]
         public void Initialize()
         {
-            _client = new HttpClient { BaseAddress = new Uri("http://localhost:8080/ParishService.svc/v1/") };
+            _client = new HttpClient { BaseAddress = new Uri("http://localhost/ParishService/ParishService.svc/v1/") };
+            _context = new ParishContext();
         }
 
         [TestMethod]
@@ -32,14 +36,16 @@ namespace Parish.Tests
             var content = await response.Content.ReadAsStringAsync();
             var parishes = JsonConvert.DeserializeObject<List<ParishModel>>(content);
 
+            var parishCount = _context.Parishes.ToList().Count;
+
             Assert.IsNotNull(parishes);
-            Assert.IsTrue(parishes.Count > 0);
+            Assert.AreEqual(parishCount, parishes.Count);
         }
 
         [TestMethod]
         public async Task GetParish_ShouldReturnCorrectParish()
         {
-            var id = "ae460af8-2ce6-4d14-b286-79509643eef0"; 
+            var id = "ae460af8-2ce6-4d14-b286-79509643eef0".ToUpper(); 
 
             var response = await _client.GetAsync($"parishes/{id}");
             response.EnsureSuccessStatusCode();
@@ -54,18 +60,15 @@ namespace Parish.Tests
         [TestMethod]
         public async Task AddParish_ShouldAddNewParish()
         {
-            var parish = new ParishModel { Id = Guid.NewGuid().ToString(), Name = "New Parish" };
+            var parish = new ParishModel { Id = Guid.NewGuid().ToString(), Name = "Test" , City = "Test", Street = "Test"};
             var json = JsonConvert.SerializeObject(parish);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             var response = await _client.PostAsync("parishes", content);
             response.EnsureSuccessStatusCode();
 
-            var responseString = await response.Content.ReadAsStringAsync();
-            var createdParish = JsonConvert.DeserializeObject<ParishModel>(responseString);
-
-            Assert.IsNotNull(createdParish);
-            Assert.AreEqual(parish.Name, createdParish.Name);
+            var addedParish = _context.Parishes.FirstOrDefault(x => x.Id == parish.Id);
+            Assert.AreEqual(parish.Id, addedParish.Id);
         }
     }
 }

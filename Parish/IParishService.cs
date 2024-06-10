@@ -20,7 +20,7 @@ namespace Parish
         /// </summary>
         /// <returns>List of Parishes</returns>
         [OperationContract]
-        [WebGet(UriTemplate = "v1/parishes", RequestFormat = WebMessageFormat.Json)]
+        [WebGet(UriTemplate = "v1/parishes", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         List<ParishModel> GetParishes();
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Parish
         /// <param name="id">Id of searched Parish</param>
         /// <returns>Parish object</returns>
         [OperationContract]
-        [WebGet(UriTemplate = "v1/parishes/{id}", RequestFormat = WebMessageFormat.Json)]
+        [WebGet(UriTemplate = "v1/parishes/{id}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         ParishModel GetParish(string id);
 
         /// <summary>
