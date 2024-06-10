@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "7ceee9d8-4039-4437-a95d-aa29d686ab5c",
+		"name": "ParishRest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33865835"
+	},
+	"item": [
+		{
+			"name": "AllParishes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ParishService.svc/v1/parishes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ParishService.svc",
+						"v1",
+						"parishes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ParishById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ParishService.svc/v1/parishes/347FC9FC-C0BB-4809-97E3-1D856C184D81",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ParishService.svc",
+						"v1",
+						"parishes",
+						"347FC9FC-C0BB-4809-97E3-1D856C184D81"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parish",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<ParishModel xmlns=\"http://schemas.datacontract.org/2004/07/Parish.Domain\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n    <City>Myślibórz</City>\r\n    <Id>347FC9FC-C0BB-4809-97E3-1D856C184D90</Id>\r\n    <Name>Rzymskokatlicka Parafia pw. Św Krzyże w Myśliborzu</Name>\r\n    <Street>ul. Kościelna 17</Street>\r\n</ParishModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ParishService.svc/v1/parishes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ParishService.svc",
+						"v1",
+						"parishes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

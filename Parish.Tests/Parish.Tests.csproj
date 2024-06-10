@@ -81,7 +81,7 @@
       <Project>{0410d6b6-fb34-4435-a03e-8544fbb351f9}</Project>
       <Name>Parish.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ParishService\Parish.csproj">
+    <ProjectReference Include="..\Parish\Parish.csproj">
       <Project>{2557a2a9-40e0-4f7c-901f-ee7be7fa3d21}</Project>
       <Name>Parish</Name>
     </ProjectReference>
