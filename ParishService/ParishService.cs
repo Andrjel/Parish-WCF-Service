@@ -3,6 +3,7 @@ using Parish.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Web;
 
 namespace Parish
@@ -12,18 +13,47 @@ namespace Parish
         readonly ParishContext _context = new ParishContext();
         public void AddParish(ParishModel parish)
         {
-            _context.Parishes.Add(parish);
-            _context.SaveChanges();
+            try
+            {
+                if (_context.Parishes.Any(x => x.Name.Equals(parish.Name)))
+                    throw new FaultException("Parish already exists.");
+                _context.Parishes.Add(parish);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new FaultException(ex.Message);
+            }
         }
 
         public ParishModel GetParish(string id)
         {
-            return _context.Parishes.FirstOrDefault(x => x.Id.ToString() == id);
+            try
+            {
+                var parish = _context.Parishes.FirstOrDefault(x => x.Id.ToString() == id);
+                if (parish == null)
+                    throw new FaultException("Parish not found.");
+
+                return parish;
+            }
+            catch (Exception ex)
+            {
+                throw new FaultException(ex.Message);
+            }
         }
 
         public List<ParishModel> GetParishes()
         {
-            return _context.Parishes.ToList();
+            try
+            {
+                var parishes = _context.Parishes.ToList();
+
+                return parishes;
+            }
+            catch (Exception ex)
+            {
+                throw new FaultException(ex.Message);
+            }
         }
     }
 }

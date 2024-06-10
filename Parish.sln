@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parish.Infrastructure", "Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parish", "ParishService\Parish.csproj", "{2557A2A9-40E0-4F7C-901F-EE7BE7FA3D21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parish.Tests", "Parish.Tests\Parish.Tests.csproj", "{1E1F59C7-8190-4D8B-9BC7-7DBEC445D4B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2557A2A9-40E0-4F7C-901F-EE7BE7FA3D21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2557A2A9-40E0-4F7C-901F-EE7BE7FA3D21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2557A2A9-40E0-4F7C-901F-EE7BE7FA3D21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E1F59C7-8190-4D8B-9BC7-7DBEC445D4B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E1F59C7-8190-4D8B-9BC7-7DBEC445D4B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E1F59C7-8190-4D8B-9BC7-7DBEC445D4B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E1F59C7-8190-4D8B-9BC7-7DBEC445D4B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -19,6 +19,6 @@ CREATE TABLE Parish (
 );
 
 INSERT INTO Parish (Id, Name, Street, City) VALUES 
-    (NEWID(), N'Parafia Rzymskokatlicka pw. Nawiedzenia NMP Mielecin', N'ul. Główna 26', N'Mielęcin'),
+    ('ae460af8-2ce6-4d14-b286-79509643eef0', N'Parafia Rzymskokatlicka pw. Nawiedzenia NMP Mielecin', N'ul. Główna 26', N'Mielęcin'),
     (NEWID(), N'Parafia pw. Wniebowzięcia NMP', N'ul. Tadeusza Kościuszki 29', N'Lipiany'),
 	(NEWID(), N'Parafia Rzymsko-Katolicka pw. św. Otton', N'ul. Dąbrowskiego 13', N'Pyrzyce');
